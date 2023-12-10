@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>e-constraint</h1>
+<h3>took {{ total_time }}</h3>
+<h3>number of solutions: {{ len_solutions }}</h3>
+<h3>evenness: {{ evenness }}</h3>
+<div class="container"><img src="../static/NRP_result.png"></div>
+<h3>solutions:</h3>
+<div class="container">
+    {% for solution in solutions %}[{{ solution[0] }}, {{ solution[1] }}] {% endfor %}
+</div>
+<button class="btn btn-link pull-right"><a href="{{ url_for('index') }}">back</a></button>
+{% endblock %}
